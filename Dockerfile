@@ -1,10 +1,12 @@
-FROM debian
+FROM debian:bullseye-slim
 
 label MAINTAINER="patrick@kite4fun.nl"
 ARG SIGNAL_CLI_VERSION='0.7.4'
 
 RUN apt-get update && \
-  apt-get install -y libterm-readline-perl-perl openjdk-11-jre curl
+  mkdir /usr/share/man/man1 && \
+  apt-get install -y apt-utils libterm-readline-perl-perl &&  \
+  apt-get install -y openjdk-11-jre curl
 
 #RUN apk update && \
 #  apk add --no-cache openjdk11-jre curl
