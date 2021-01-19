@@ -14,3 +14,11 @@ After device is connected you can start sending messages:
 
 ## show CLI help
 `docker run -v $HOME/signal:/config --rm -it pblaas/signal-cli:latest -h`
+
+## having some fun
+echo `curl --silent https://api.chucknorris.io/jokes/random | jq '. | .value'` | docker run -v $HOME/signal:/config --rm -i signal:dev -u +31630030905 send --g "2SElh8hai/NQTSNaBOpHKBc0BbYE90l1iQyXAQzfeoE="
+
+## bot ideas
+# !jokes - show random joke
+# !gifs  - show random gif
+# !weather - show weather 

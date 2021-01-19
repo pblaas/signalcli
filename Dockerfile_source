@@ -1,0 +1,16 @@
+FROM alpine:latest
+
+label MAINTAINER="patrick@kite4fun.nl"
+
+RUN apk update && \
+  apk add --no-cache openjdk11 git gradle
+
+RUN git clone https://github.com/AsamK/signal-cli.git
+WORKDIR /signal-cli
+RUN ./gradlew build && \
+  ./gradlew installDist && \
+ ln -s /signal-cli/build/install/signal-cli signal
+
+USER nobody
+VOLUME /config
+ENTRYPOINT ["/signal-cli/build/install/signal-cli/bin/signal-cli", "--config", "/config"]
