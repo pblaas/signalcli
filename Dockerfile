@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 label MAINTAINER="patrick@kite4fun.nl"
-ARG SIGNAL_CLI_VERSION='0.6.12'
+ARG SIGNAL_CLI_VERSION='0.7.3'
 
 RUN apk update && \
   apk add --no-cache openjdk11-jre curl
