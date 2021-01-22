@@ -6,7 +6,13 @@ ARG SIGNAL_CLI_VERSION='0.7.4'
 RUN apt-get update && \
   mkdir /usr/share/man/man1 && \
   apt-get install -y apt-utils libterm-readline-perl-perl &&  \
-  apt-get install -y openjdk-11-jre curl
+  apt-get install -y openjdk-11-jre curl locales
+
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+  dpkg-reconfigure --frontend=noninteractive locales && \
+  update-locale LANG=en_US.UTF-8
+
+ENV LANG en_US.UTF-8 
 
 #RUN apk update && \
 #  apk add --no-cache openjdk11-jre curl
