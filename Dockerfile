@@ -1,6 +1,6 @@
 FROM debian:bullseye-slim
 
-label MAINTAINER="patrick@kite4fun.nl"
+LABEL MAINTAINER="patrick@kite4fun.nl"
 ARG SIGNAL_CLI_VERSION='0.7.4'
 
 RUN apt-get update && \
