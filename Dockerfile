@@ -14,9 +14,6 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
 
 ENV LANG en_US.UTF-8 
 
-#RUN apk update && \
-#  apk add --no-cache openjdk11-jre curl
-
 RUN curl -OL https://github.com/AsamK/signal-cli/releases/download/v$SIGNAL_CLI_VERSION/signal-cli-$SIGNAL_CLI_VERSION.tar.gz && \ 
   tar -zxvf signal-cli-$SIGNAL_CLI_VERSION.tar.gz && \
   rm -f signal-cli-$SIGNAL_CLI_VERSION.tar.gz && \
