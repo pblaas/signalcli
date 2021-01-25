@@ -24,3 +24,13 @@ docker run -v $HOME/signal:/config --rm -it pblaas/signalcli:latest -h
 ```
 echo `curl --silent https://api.chucknorris.io/jokes/random | jq '. | .value'` | docker run -v $HOME/signal:/config --rm -i signalcli:latest -u YOURREGISTRATIONNR send --g GROUPID
 ```
+
+# Signal container images
+
+Two container images are currenly provided. 
+* signalcli:latest
+    - based on AsamK/signal-cli release 
+* signalcli:source
+    - based on AsamK/signal-cli master branch
+
+
