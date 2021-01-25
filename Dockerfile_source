@@ -1,9 +1,10 @@
-FROM alpine:latest
+FROM debian:bullseye-slim
 
-label MAINTAINER="patrick@kite4fun.nl"
+LABEL MAINTAINER="patrick@kite4fun.nl"
 
-RUN apk update && \
-  apk add --no-cache openjdk11 git gradle
+RUN apt-get update && \
+  apt-get install -y apt-utils libterm-readline-perl-perl &&  \
+  apt-get install -y openjdk-11-jre git gradle locales
 
 RUN git clone https://github.com/AsamK/signal-cli.git
 WORKDIR /signal-cli
