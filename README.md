@@ -4,32 +4,23 @@
 ## Create intial config
 ```
 mkdir $HOME/signal
-docker run -v $HOME/signal:/config --rm -it pblaas/signal-cli:latest link
+docker run -v $HOME/signal:/config --rm -it pblaas/signalcli:latest link
 ```
-
 
 Paste entire tsdevice:/? string in https://www.nayuki.io/page/qr-code-generator-library and read with Signal APP to add connected device.
 
 ## Start messaging
 After device is connected you can start sending messages:
 ```
-docker run -v $HOME/signal:/config --rm -it pblaas/signal-cli:latest -u YOURREGISTEREDNR send RECEIVER -m "your message"
+docker run -v $HOME/signal:/config --rm -it pblaas/signalcli:latest -u YOURREGISTEREDNR send RECEIVERNR -m "your message"
 ```
-
 
 ## show CLI help
 ```
-docker run -v $HOME/signal:/config --rm -it pblaas/signal-cli:latest -h
+docker run -v $HOME/signal:/config --rm -it pblaas/signalcli:latest -h
 ```
 
 ## having some fun
 ```
-echo `curl --silent https://api.chucknorris.io/jokes/random | jq '. | .value'` | docker run -v $HOME/signal:/config --rm -i signal:dev -u +31630030905 send --g "2SElh8hai/NQTSNaBOpHKBc0BbYE90l1iQyXAQzfeoE="
+echo `curl --silent https://api.chucknorris.io/jokes/random | jq '. | .value'` | docker run -v $HOME/signal:/config --rm -i signalcli:latest -u YOURREGISTRATIONNR send --g GROUPID
 ```
-
-## bot ideas
-* !jokes - show random joke
-* !gifs  - show random gif
-* !weather - show weather 
-* !news - parse latest news from site x
-* !me - return with random reply
