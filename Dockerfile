@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim
 
 LABEL MAINTAINER="patrick@kite4fun.nl"
-ARG SIGNAL_CLI_VERSION='0.8.3'
+ARG SIGNAL_CLI_VERSION='0.8.4.1'
 
 RUN apt-get update && \
   mkdir /usr/share/man/man1 && \
