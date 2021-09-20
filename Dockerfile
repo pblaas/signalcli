@@ -4,7 +4,6 @@ LABEL MAINTAINER="patrick@kite4fun.nl"
 ARG SIGNAL_CLI_VERSION='0.9.0'
 
 RUN apt-get update && \
-  mkdir /usr/share/man/man1 && \
   apt-get install -y apt-utils libterm-readline-perl-perl &&  \
   apt-get install -y openjdk-11-jre curl locales && \
   apt-get clean
