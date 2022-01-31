@@ -5,7 +5,7 @@ ARG SIGNAL_CLI_VERSION='0.10.2'
 
 RUN apt-get update && \
   apt-get install -y apt-utils libterm-readline-perl-perl &&  \
-  apt-get install -y openjdk-11-jre curl locales && \
+  apt-get install -y openjdk-17-jre curl locales && \
   apt-get clean
 
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \

@@ -4,7 +4,7 @@ LABEL MAINTAINER="patrick@kite4fun.nl"
 
 RUN apt-get update && \
   apt-get install -y apt-utils libterm-readline-perl-perl &&  \
-  apt-get install -y openjdk-11-jre curl git locales gradle && \
+  apt-get install -y openjdk-17-jre curl git locales gradle && \
   apt-get clean
 
 RUN git clone https://github.com/AsamK/signal-cli.git
