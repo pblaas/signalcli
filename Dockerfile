@@ -14,9 +14,9 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
 
 ENV LANG en_US.UTF-8
 RUN curl -OL https://github.com/AsamK/signal-cli/releases/download/v$SIGNAL_CLI_VERSION/signal-cli-$SIGNAL_CLI_VERSION-Linux.tar.gz && \
-  tar -zxvf signal-cli-$SIGNAL_CLI_VERSION.tar.gz && \
-  rm -f signal-cli-$SIGNAL_CLI_VERSION.tar.gz && \
-  ln -s signal-cli-$SIGNAL_CLI_VERSION signal 
+  tar -zxvf signal-cli-$SIGNAL_CLI_VERSION-Linux.tar.gz && \
+  rm -f signal-cli-$SIGNAL_CLI_VERSION-Linux.tar.gz && \
+  ln -s signal-cli-$SIGNAL_CLI_VERSION signal
 
 USER nobody
 VOLUME /config
