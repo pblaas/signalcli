@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim
 
 LABEL MAINTAINER="patrick@kite4fun.nl"
-ARG SIGNAL_CLI_VERSION='0.10.9'
+ARG SIGNAL_CLI_VERSION='0.10.11'
 
 RUN apt-get update && \
   apt-get install -y apt-utils libterm-readline-perl-perl &&  \
